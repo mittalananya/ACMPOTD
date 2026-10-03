@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    vector<int> a(n);
+
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int minimum = *min_element(a.begin(), a.end());
+
+    int second = 101;
+    
+    for (int x : a) {
+        if (x > minimum) {
+            second = min(second, x);
+        }
+    }
+
+    if (second == 101)
+        cout << "NO";
+    else
+        cout << second;
+
+    return 0;
+}
